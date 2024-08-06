@@ -51,6 +51,10 @@ class Player:
     def getHealing(self):
         return self.healing
     
+    def performAttack(self):
+        damage = random.randint(0, self.attack)
+        return damage
+    
     def setExp(self, newExp):
         self.exp += newExp
         if self.exp > 100:
@@ -100,10 +104,7 @@ class Player:
 class Knight(Player):
     def __init__(self, name, gender,level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
         super().__init__(name, gender, "Knight",level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
-        
-    def attack(self):
-        damage = random.randint(0, self.attack)
-        return damage
+    
     
     def specialAttack(self):
         if self.mana > 30:
@@ -116,7 +117,7 @@ class Knight(Player):
     def heal(self):
         if self.mana > 10:
             self.mana -= 10
-            self.health += self.healing
+            self.currentHealth += self.healing
         else:
             return f"Sorry, your current mana is: {self.mana} and it is too low"
 
@@ -124,9 +125,6 @@ class Paladin(Player):
     def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
         super().__init__(name, gender, "Paladin", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
     
-    def attack(self):
-        damage = random.randint(0, self.attack)
-        return damage
     
     def specialAttack(self):
         if self.mana > 25:
@@ -139,7 +137,7 @@ class Paladin(Player):
     def heal(self):
         if self.mana > 10:
             self.mana -= 10
-            self.health += self.healing
+            self.currentHealth += self.healing
         else:
             return f"Sorry, your current mana is: {self.mana} and it is too low"
         
@@ -147,10 +145,6 @@ class Paladin(Player):
 class Druid(Player):
     def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
         super().__init__(name, gender, "Druid", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
-    
-    def attack(self):
-        damage = random.randint(0, self.attack)
-        return damage
     
     def specialAttack(self):
         if self.mana > 45:
@@ -163,17 +157,13 @@ class Druid(Player):
     def heal(self):
         if self.mana > 10:
             self.mana -= 10
-            self.health += self.healing
+            self.currentHealth += self.healing
         else:
             return f"Sorry, your current mana is: {self.mana} and it is too low"
 
 class Sorcerer(Player):
     def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
         super().__init__(name, gender, "Sorcerer", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
-        
-    def attack(self):
-        damage = random.randint(0, self.attack)
-        return damage
     
     def specialAttack(self):
         if self.mana > 50:
@@ -186,6 +176,6 @@ class Sorcerer(Player):
     def heal(self):
         if self.mana > 10:
             self.mana -= 10
-            self.health += self.healing
+            self.currentHealth += self.healing
         else:
             return f"Sorry, your current mana is: {self.mana} and it is too low"

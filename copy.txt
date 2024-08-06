@@ -1,0 +1,107 @@
+
+------Test------
+| Gender: male |
+| Level: 1 |
+| Exp: 0 |
+| Max Heatlh: 450 |
+| Current Health: 450 |
+| Mana: 100 |
+| Attack: 30 |
+| Special Attack: 45 |
+| Defense: 40 |
+| Healing: 10 |
+----------------
+ 
+The battle has started!
+1
+You attacked the Dog for 21 damage!
+
+The Dog attacked you for 1 damage!
+1
+You attacked the Dog for 24 damage!
+
+The Dog attacked you for 4 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 9 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 0 damage!
+2
+You used a special attack on the Dog for 45 damage!
+
+The Dog has been defeated!
+Welcome to character creation game! 
+ There will be some questions for you in order to create your character, are you ready? || Type: 'yes' or 'no' 
+yesPlease introduce your character name: || Type 'exit' to exit the game 
+TestPlease introduce the character gender: || Type 'male' or 'female' || type 'exit' to exit the game 
+malePlease select one of the following professions for your character: 
+Type 1 to select Paladin 
+Type 2 to select Knight, 
+Type 3 to select Sorcerer, 
+Type 4 to select Druid || type 'exit' to exit the game
+2
+Your character Test has been created succesfully
+------Lunera------
+| Gender: male |
+| Level: 1 |
+| Exp: 0 |
+| Max Heatlh: 200 |
+| Current Health: 200 |
+| Mana: 100 |
+| Attack: 30 |
+| Special Attack: 45 |
+| Defense: 40 |
+| Healing: 10 |
+----------------
+ 
+The battle has started!
+2
+You used a special attack on the Dog for 45 damage!
+
+The Dog attacked you for 9 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 0 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 1 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 10 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 1 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 10 damage!
+4
+You healed yourself for 10 health!
+
+The Dog attacked you for 2 damage!
+1
+You attacked the Dog for 6 damage!
+
+The Dog attacked you for 4 damage!
+1
+You attacked the Dog for 19 damage!
+
+The Dog has been defeated!
+Welcome to character creation game! 
+ There will be some questions for you in order to create your character, are you ready? || Type: 'yes' or 'no' 
+yesPlease introduce your character name: || Type 'exit' to exit the game 
+LuneraPlease introduce the character gender: || Type 'male' or 'female' || type 'exit' to exit the game 
+malePlease select one of the following professions for your character: 
+Type 1 to select Paladin 
+Type 2 to select Knight, 
+Type 3 to select Sorcerer, 
+Type 4 to select Druid || type 'exit' to exit the game
+3
+Your character Lunera has been created succesfully
