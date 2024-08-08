@@ -181,3 +181,11 @@ def check_defeat(character, enemy):
     if enemy.getCurrentHealth() <= 0:
         print(f"\nThe {enemy.getName()} has been defeated!\n")
         recordDocument(f"\nThe {enemy.getName()} has been defeated!\n")
+
+def reward(character,enemy):
+    goldRewarded = enemy.getGold()
+    expRewarded = enemy.getExp()
+    print(f"\nYour reward:\n Experience: {expRewarded}.\n Gold: {goldRewarded} coins.\n")
+    recordDocument("\nYour reward:\n Experience: {enemy.getExp()}.\n Gold: {enemy.getGold()} coins.\n")
+    character.gold += goldRewarded
+    character.exp += expRewarded

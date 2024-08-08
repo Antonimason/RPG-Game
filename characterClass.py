@@ -1,7 +1,7 @@
 import random
 
 class Player:
-    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
+    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold):
         self.name = name
         self.gender = gender
         self.profession = profession
@@ -14,6 +14,7 @@ class Player:
         self.specialAttack = specialAttack
         self.defense = defense
         self.healing = healing
+        self.gold = gold
         
     def getName(self):
         return self.name
@@ -50,6 +51,9 @@ class Player:
     
     def getHealing(self):
         return self.healing
+    
+    def getGold(self):
+        return self.gold
     
     def performAttack(self):
         damage = random.randint(0, self.attack)
@@ -102,8 +106,8 @@ class Player:
                 return "Stats have been increased"
 
 class Knight(Player):
-    def __init__(self, name, gender,level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
-        super().__init__(name, gender, "Knight",level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
+    def __init__(self, name, gender,level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold):
+        super().__init__(name, gender, "Knight",level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold)
     
     
     def specialAttack(self):
@@ -122,8 +126,8 @@ class Knight(Player):
             return f"Sorry, your current mana is: {self.mana} and it is too low"
 
 class Paladin(Player):
-    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
-        super().__init__(name, gender, "Paladin", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
+    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold):
+        super().__init__(name, gender, "Paladin", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold)
     
     
     def specialAttack(self):
@@ -143,8 +147,8 @@ class Paladin(Player):
         
 
 class Druid(Player):
-    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
-        super().__init__(name, gender, "Druid", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
+    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold):
+        super().__init__(name, gender, "Druid", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold)
     
     def specialAttack(self):
         if self.mana > 45:
@@ -162,8 +166,8 @@ class Druid(Player):
             return f"Sorry, your current mana is: {self.mana} and it is too low"
 
 class Sorcerer(Player):
-    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing):
-        super().__init__(name, gender, "Sorcerer", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing)
+    def __init__(self, name, gender, level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold):
+        super().__init__(name, gender, "Sorcerer", level, exp, maxHealth, currentHealth, mana, attack, specialAttack, defense, healing, gold)
     
     def specialAttack(self):
         if self.mana > 50:
