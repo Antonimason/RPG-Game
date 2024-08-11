@@ -43,33 +43,38 @@ def characterCreation():
         characterProfession = input(professionRequest).lower().strip()
         if characterProfession == "1":
             character = Paladin(characterName,characterGender,"Paladin",1,0,300,300,100,100,30,45,40,10,0)
+            printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "2":
             character = Knight(characterName,characterGender,"Knight",1,0,450,450,100,100,30,45,40,10,0)
+            printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "3":
             character = Sorcerer(characterName,characterGender,"Sorcerer",1,0,200,200,100,100,30,45,40,10,0)
+            printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "4":
             character = Druid(characterName,characterGender,"Druid",1,0,200,200,100,100,30,45,40,10,0)
+            printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "exit":
             trigger = True
 
-        recordDocument(welcome)
-        recordDocument(startProgram)
-        recordDocument(nameRequest)
-        recordDocument(characterName)
-        recordDocument(genderRequest)
-        recordDocument(characterGender)
-        recordDocument(professionRequest)
-        recordDocument(characterProfession)
-        recordDocument(f"\nYour character {characterName} has been created succesfully")
-        
+def printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession):
+    recordDocument(welcome)
+    recordDocument(startProgram)
+    recordDocument(nameRequest)
+    recordDocument(characterName)
+    recordDocument(genderRequest)
+    recordDocument(characterGender)
+    recordDocument(professionRequest)
+    recordDocument(characterProfession)
+    recordDocument(f"\nYour character {characterName} has been created succesfully")
+                
 def get_valid_gender(genderRequest):
     while True:
         characterGender = input(genderRequest).lower().strip()

@@ -1,102 +1,64 @@
-#For this part, you are required to develop a Python program that:
-#Takes in an input directory, a destination directory, and a misc directory as inputs. 
-#Renames all files in the input directory, so that instead of month/day/year the file name goes year/month/day.
-#Moves the renamed files to the destination directory
-#Any file that is not renamed is instead moved to the misc directory.
+import os
+from datetime import datetime
 
-import os  # Import the 'os' module to interact with the file system
-from datetime import datetime  # Import 'datetime' for working with dates
-
-def fileOrganizer():
-    
-    
+def fileChecker():
     """
-    Main function to set up directories and initiate the file checking process.
-    """
-    # Define the input, destination, and misc directories
-    inputDirectory = "input"
-    destinationDirectory = "destination"
-    miscDirectory = "misc"
+    Check files within the Input directory and move them to the appropriate location.
     
-    # Create directories if they don't exist
-    createDirectory(inputDirectory)
-    createDirectory(destinationDirectory)
-    createDirectory(miscDirectory)
-    
-    trigger = False  # Initialize the trigger to control the loop
-    while not trigger:
-        # Prompt the user to place documents in the input directory
-        checker = input("Please introduce all of your documents into inputDirectory in order to check them all || Have you introduced your documents? Press 'y' or 'n'")
-        if checker.lower() == "y":
-            # Call the fileChecker function to process the files
-            fileChecker(inputDirectory, destinationDirectory, miscDirectory)
-
-def createDirectory(directory):
+    No Args
     """
-    Create a directory if it doesn't exist.
-    
-    Args:
-        directory (str): The name of the directory to create.
-    """
+    inputDirectory = "Input"  # Define the input directory containing files to check
+    destinationDir = "Destination"  # Define the directory to move valid files to
+    miscDir = "Misc"  # Define the directory to move invalid files to
     try:
-        os.mkdir(directory)
-        print(f"Directory {directory} has been created.")
-    except FileExistsError:
-        print(f"Directory {directory} already exists.")
-    pass
-
-def fileChecker(directory, destinationDir, miscDir):
-    """
-    Check files in the given directory and move them to the appropriate location.
-    
-    Args:
-        directory (str): The directory to check files in.
-        destinationDir (str): The directory to move valid files to.
-        miscDir (str): The directory to move invalid files to.
-    """
-    try:
-        for filename in os.listdir(directory):  # List all files in the input directory
-            file_path = os.path.join(directory, filename)
+        # Loop through each file in the input directory
+        for filename in os.listdir(inputDirectory):
+            file_path = os.path.join(inputDirectory, filename)  # Get the full path of the file
             if os.path.isfile(file_path):  # Check if the path is a file
                 if fileFormat(filename):  # Check if the file format is correct
                     newFilename = renameFile(filename)  # Rename the file
-                    destination_path = os.path.join(destinationDir, newFilename)
+                    destination_path = os.path.join(destinationDir, newFilename)  # Construct the new path for the file
                     os.rename(file_path, destination_path)  # Move the file to the destination directory
-                    print(f"Renamed and moved {filename} to {destination_path}")
+                    print(f"Renamed and moved {filename} to {destination_path}")  # Print confirmation message
                 else:
-                    misc_path = os.path.join(miscDir, filename)
+                    misc_path = os.path.join(miscDir, filename)  # Construct the path for the invalid file
                     os.rename(file_path, misc_path)  # Move the file to the misc directory
-                    print(f"Moved {filename} to {misc_path}")
+                    print(f"Moved {filename} to {misc_path}")  # Print confirmation message
     except Exception as e:
-        print(f"An error occurred while checking the file: {e}")
+        print(f"An error occurred while checking the file: {e}")  # Print error message if something goes wrong
 
 def fileFormat(filename):
     """
-    Check if the file name is in the correct format (MM-DD-YYYY).
+    Check if the file name contains a date in the MM-DD-YYYY format.
     
     Args:
         filename (str): The name of the file to check.
     
     Returns:
-        bool: True if the format is correct, False otherwise.
+        bool: True if the date format is correct, False otherwise.
     """
-    base_filename, _ = os.path.splitext(filename)
-    parts = base_filename.split('-')
-    if len(parts) != 3:
+    base_filename, _ = os.path.splitext(filename)  # Get the base name of the file without extension
+    
+    # Split the base filename by spaces to separate any prefix from the date part
+    parts = base_filename.split(' ')
+    date_part = parts[-1]  # Get the last part which should be the date
+    
+    date_parts = date_part.split('-')  # Split the date part by dashes
+    if len(date_parts) != 3:  # Check if the date part has exactly 3 components
         return False
-    month, day, year = parts
-    if len(day) != 2 or len(month) != 2 or len(year) != 4:
-        return True
+    month, day, year = date_parts  # Extract month, day, and year
+    if len(day) != 2 or len(month) != 2 or len(year) != 4:  # Check if day and month are 2 digits and year is 4 digits
+        return False
     try:
-        # Try to create a date with month, day, year.
+        # Try to create a date with month, day, and year to validate the date
         datetime.strptime(f"{month}-{day}-{year}", "%m-%d-%Y")
         return True
     except ValueError:
-        return False
+        return False  # Return False if the date is invalid
 
 def renameFile(filename):
     """
-    Rename the file from MM-DD-YYYY to YYYY-MM-DD format.
+    Rename the file from MM-DD-YYYY format to YYYY-MM-DD format.
     
     Args:
         filename (str): The name of the file to rename.
@@ -105,13 +67,22 @@ def renameFile(filename):
         str: The new name of the file.
     """
     try:
-        base_filename, ext = os.path.splitext(filename)
-        month, day, year = base_filename.split('-')
-        return f"{year}-{month}-{day}{ext}"
+        base_filename, ext = os.path.splitext(filename)  # Get the base name and extension of the file
+        
+        # Split the base filename by spaces to separate any prefix from the date part
+        parts = base_filename.split(' ')
+        date_part = parts[-1]  # Get the last part which should be the date
+        month, day, year = date_part.split('-')  # Split the date part by dashes
+        
+        # Reconstruct the filename with the new date format YYYY-MM-DD
+        new_date = f"{year}-{month}-{day}"
+        if len(parts) > 1:
+            new_base_filename = ' '.join(parts[:-1]) + ' ' + new_date  # Combine prefix with new date
+        else:
+            new_base_filename = new_date  # No prefix, just the new date
+            
+        return f"{new_base_filename}{ext}"  # Return the new filename with extension
     except Exception as e:
-        print(f"Error when renaming the file: {e}")
-        return filename
-
-if __name__ == "__fileOrganizer__":
-    fileOrganizer()
+        print(f"Error renaming the file: {e}")  # Print error message if something goes wrong
+        return filename  # Return the original filename if there is an error
 
