@@ -1,4 +1,4 @@
-from utilities import recordDocument
+from Utilities.utilities import recordDocument, historyLine
 
 def battle(character, enemy):
     """
@@ -13,8 +13,7 @@ def battle(character, enemy):
     while character.getCurrentHealth() > 0 and enemy.getCurrentHealth() > 0:
         decision = get_player_action(character, enemy)
         if not handle_action(decision, character, enemy):
-            print("\nSorry, input not valid\n")
-            recordDocument("\nSorry, input not valid\n")
+            historyLine("\nSorry, input not valid\n")
             continue
 
         if enemy.getCurrentHealth() > 0:
@@ -31,8 +30,7 @@ def start_battle(character, enemy):
         enemy (Enemy): The enemy character the player is fighting against.
     """
     message = "\nThe battle has started!\n"
-    print(message)
-    recordDocument(message)
+    historyLine(message)
     display_battle_status(character, enemy)
 
 def display_battle_status(character, enemy):
@@ -48,7 +46,7 @@ def display_battle_status(character, enemy):
         str: A string representing the battle status and player options.
     """
     status_message = (
-        f"\nYour current Health is: {character.getCurrentHealth()} and "
+        f"\nYour current Health is: {character.getCurrentHealth()} and your mana is: {character.getCurrentMana()}"
         f"\nyour enemy Health is: {enemy.getCurrentHealth()}\n"
         "\nWhat do you want to do?\n"
         "Type 1 to attack\n"
@@ -107,8 +105,7 @@ def perform_attack(character, enemy):
     """
     damage = character.performAttack()
     enemy.currentHealth -= damage
-    print(f"\nYou attacked the {enemy.getName()} for {damage} damage!\n")
-    recordDocument(f"\nYou attacked the {enemy.getName()} for {damage} damage!\n")
+    historyLine(f"\nYou attacked the {enemy.getName()} for {damage} damage!\n")
 
 def perform_special_attack(character, enemy):
     """
@@ -118,10 +115,12 @@ def perform_special_attack(character, enemy):
         character (Player): The player character.
         enemy (Enemy): The enemy character.
     """
-    special_damage = character.getSpecialAttack()
-    enemy.currentHealth -= special_damage
-    print(f"\nYou used a special attack on the {enemy.getName()} for {special_damage} damage!\n")
-    recordDocument(f"\nYou used a special attack on the {enemy.getName()} for {special_damage} damage!\n")
+    special_damage = character.getSpecialAttackDamage()
+    if(special_damage == None):
+        historyLine(f"Sorry, your current mana is: {character.getCurrentMana()} and it is too low")
+    else:
+        enemy.currentHealth -= special_damage
+        historyLine(f"\nYou used a special attack on the {enemy.getName()} for {special_damage} damage!\n")
 
 def perform_defense(character, enemy):
     """
@@ -135,8 +134,7 @@ def perform_defense(character, enemy):
     enemy_attack = enemy.performAttack() - defense
     enemy_attack = max(0, enemy_attack)  # Ensure that damage cannot be negative
     character.currentHealth -= enemy_attack
-    print(f"\nYou defended against the {enemy.getName()}'s attack, reducing damage to {enemy_attack}!\n")
-    recordDocument(f"\nYou defended against the {enemy.getName()}'s attack, reducing damage to {enemy_attack}!\n")
+    historyLine(f"\nYou defended against the {enemy.getName()}'s attack, reducing damage to {enemy_attack}!\n")
 
 def perform_heal(character):
     """
@@ -145,13 +143,11 @@ def perform_heal(character):
     Args:
         character (Player): The player character.
     """
-    healing = character.getHealing()
-    character.currentHealth += healing
+    healing = character.heal()
     # Ensure that health does not exceed maximum health
-    if character.currentHealth > character.maxHealth:
-        character.currentHealth = character.maxHealth
-    print(f"\nYou healed yourself for {healing} health!\n")
-    recordDocument(f"\nYou healed yourself for {healing} health!\n")
+    if character.currentHealth > character.getMaxHealth():
+        character.currentHealth = character.getMaxHealth()
+    historyLine(f"\nYou healed yourself for {healing} health!\n")
 
 def enemy_attack(character, enemy):
     """
@@ -163,8 +159,7 @@ def enemy_attack(character, enemy):
     """
     enemy_damage = enemy.performAttack()
     character.currentHealth -= enemy_damage
-    print(f"\nThe {enemy.getName()} attacked you for {enemy_damage} damage!\n")
-    recordDocument(f"\nThe {enemy.getName()} attacked you for {enemy_damage} damage!\n")
+    historyLine(f"\nThe {enemy.getName()} attacked you for {enemy_damage} damage!\n")
 
 def check_defeat(character, enemy):
     """
@@ -175,17 +170,30 @@ def check_defeat(character, enemy):
         enemy (Enemy): The enemy character.
     """
     if character.getCurrentHealth() <= 0:
-        print("\nYou have been defeated!\n")
-        recordDocument("\nYou have been defeated!\n")
+        historyLine("\nYou have been defeated!\n")
+        character.isAlive = False
 
     if enemy.getCurrentHealth() <= 0:
-        print(f"\nThe {enemy.getName()} has been defeated!\n")
-        recordDocument(f"\nThe {enemy.getName()} has been defeated!\n")
+        historyLine(f"\nThe {enemy.getName()} has been defeated!\n")
+        reward(character,enemy)
 
 def reward(character,enemy):
+    """
+    Obtaining a reward once the enemy is defeated
+    
+    Args:
+        character (Player): The player character.
+        enemy (Enemy): The enemy character.
+    """
+    
+    #getting enemy rewards stats
     goldRewarded = enemy.getGold()
     expRewarded = enemy.getExp()
-    print(f"\nYour reward:\n Experience: {expRewarded}.\n Gold: {goldRewarded} coins.\n")
-    recordDocument("\nYour reward:\n Experience: {enemy.getExp()}.\n Gold: {enemy.getGold()} coins.\n")
+    historyLine(f"\nYour reward:\n Experience: {expRewarded}.\n Gold: {goldRewarded} coins.\n")
+    
+    # Adding reward to character and restarting character current health and mana
     character.gold += goldRewarded
-    character.exp += expRewarded
+    character.setExp(expRewarded)
+    character.currentHealth = character.maxHealth
+    character.currentMana = character.maxMana
+    

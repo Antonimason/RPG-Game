@@ -7,7 +7,9 @@
 import os  # Import the 'os' module to interact with the file system
 from datetime import datetime  # Import 'datetime' for working with dates
 
-def main():
+def fileOrganizer():
+    
+    
     """
     Main function to set up directories and initiate the file checking process.
     """
@@ -110,6 +112,6 @@ def renameFile(filename):
         print(f"Error when renaming the file: {e}")
         return filename
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__fileOrganizer__":
+    fileOrganizer()
 
