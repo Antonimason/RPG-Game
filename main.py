@@ -1,18 +1,23 @@
 import os;
 from dotenv import load_dotenv
-from Utilities.utilities import historyLine
 from Chapters.characterCreation import characterCreation
-from Player.characterStats import characterStats
-from Services.gmailProvider import gmailProviderCaller
 
 
 def main():
     
-    # Loading .env file
-    load_dotenv()
-    
     #Starting character creation process
     characterCreation()
+
+    #Directories name
+    folders = ["Misc", "Input", "Destination"]
+
+    #If they do not exist then the system create them
+    for folder in folders:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+            print(f"Directory '{folder}' has been created.")
+        else:
+            print(f"Directory '{folder}' already exists.")
 
     
 if __name__ == "__main__":
