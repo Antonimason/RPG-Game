@@ -42,22 +42,22 @@ def characterCreation():
                  
         characterProfession = input(professionRequest).lower().strip()
         if characterProfession == "1":
-            character = Paladin(characterName,characterGender,"Paladin",1,0,300,300,100,100,30,45,40,10,0)
+            character = Paladin(userEmailAddress,characterName,characterGender,"Paladin",1,0,100,300,300,100,100,30,45,40,10,0)
             printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "2":
-            character = Knight(characterName,characterGender,"Knight",1,0,450,450,100,100,30,45,40,10,0)
+            character = Knight(userEmailAddress,characterName,characterGender,"Knight",1,0,100,450,450,100,100,30,45,40,10,0)
             printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "3":
-            character = Sorcerer(characterName,characterGender,"Sorcerer",1,0,200,200,100,100,30,45,40,10,0)
+            character = Sorcerer(userEmailAddress,characterName,characterGender,"Sorcerer",1,0,100,200,200,100,100,30,45,40,10,0)
             printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "4":
-            character = Druid(characterName,characterGender,"Druid",1,0,200,200,100,100,30,45,40,10,0)
+            character = Druid(userEmailAddress,characterName,characterGender,"Druid",1,0,100,200,200,100,100,30,45,40,10,0)
             printingCharacterCreation(welcome,startProgram,nameRequest,characterName,genderRequest,characterGender,professionRequest,characterProfession)
             chapter_1(character)
             trigger = True

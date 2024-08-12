@@ -1,12 +1,14 @@
 import random
 
 class Player:
-    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+    def __init__(self,email, name, gender, profession, level, exp, maxExp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+        self.email = email
         self.name = name
         self.gender = gender
         self.profession = profession
         self.level = level
         self.exp = exp
+        self.maxExp = maxExp
         self.maxHealth = maxHealth
         self.currentHealth = currentHealth
         self.maxMana = maxMana
@@ -17,7 +19,11 @@ class Player:
         self.defense = defense
         self.healing = healing
         self.gold = gold
+        self.inventory = []
         self.isAlive = True
+    
+    def getEmail(self):
+        return self.email
         
     def getName(self):
         return self.name
@@ -33,6 +39,9 @@ class Player:
     
     def getExp(self):
         return self.exp
+    
+    def getMaxExp(self):
+        return self.maxExp
     
     def getMaxHealth(self):
         return self.maxHealth
@@ -61,6 +70,10 @@ class Player:
     def getGold(self):
         return self.gold
     
+    def getInventory(self):
+        return self.inventory
+            
+    
     def getIsAlive(self):
         if(self.isAlive == True):
             return True
@@ -81,8 +94,8 @@ class Player:
     
     def setExp(self, newExp):
         self.exp += newExp
-        if self.exp > 100:
-            self.exp -= 100
+        if self.exp >= self.maxExp:
+            self.exp -= self.maxExp
             self.levelUp(1)
             
     def levelUp(self, levelUp):
@@ -94,6 +107,7 @@ class Player:
     def attributesIncrease(self,profession):
         match(profession):
             case "Paladin":
+                self.maxExp *= 1.5
                 self.maxHealth += 30
                 self.maxMana += 15
                 self.attack += 20
@@ -102,6 +116,7 @@ class Player:
                 self.healing += 7
                 return "Stats have been increased"
             case "Knight":
+                self.maxExp *= 1.5
                 self.maxHealth += 40
                 self.maxMana += 5
                 self.attack += 25
@@ -110,6 +125,7 @@ class Player:
                 self.healing += 5
                 return "Stats have been increased"
             case "Sorcerer":
+                self.maxExp *= 1.5
                 self.maxHealth += 5
                 self.maxMana += 15
                 self.attack += 10
@@ -118,6 +134,7 @@ class Player:
                 self.healing += 15
                 return "Stats have been increased"
             case "Druid":
+                self.maxExp *= 1.5
                 self.maxHealth += 5
                 self.maxMana += 15
                 self.attack += 10
@@ -127,8 +144,8 @@ class Player:
                 return "Stats have been increased"
 
 class Knight(Player):
-    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
-        super().__init__(name, gender, "Knight",level, exp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold)
+    def __init__(self,email, name, gender, profession, level, exp, maxExp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+        super().__init__(email,name, gender, "Knight",level, exp, maxExp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold)
         self.specialAttackManaCost = 30
     
     def heal(self):
@@ -139,8 +156,8 @@ class Knight(Player):
             return f"Sorry, your current Mana is: {self.currentMana} and it is too low"
 
 class Paladin(Player):
-    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
-        super().__init__(name, gender, "Paladin", level, exp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold)
+    def __init__(self,email, name, gender, profession, level, exp, maxExp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+        super().__init__(email,name, gender, "Paladin", level, exp, maxExp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold)
         self.specialAttackManaCost = 25
     
     
@@ -153,8 +170,8 @@ class Paladin(Player):
         
 
 class Druid(Player):
-    def __init__(self, name, gender, profesison, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold):
-        super().__init__(name, gender, "Druid", level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
+    def __init__(self, email, name, gender, profesison, level, exp, maxExp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+        super().__init__(email, name, gender, "Druid", level, exp, maxExp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
         self.specialAttackManaCost = 45
     
     def heal(self):
@@ -165,8 +182,8 @@ class Druid(Player):
             return f"Sorry, your current Mana is: {self.currentMana} and it is too low"
 
 class Sorcerer(Player):
-    def __init__(self, name, gender, profession, level, exp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
-        super().__init__(name, gender, "Sorcerer", level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
+    def __init__(self, email, name, gender, profession, level, exp, maxExp, maxHealth, currentHealth,maxMana, currentMana, attack, specialAttack, defense, healing, gold):
+        super().__init__(email, name, gender, "Sorcerer", level, exp, maxExp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
         self.specialAttackManaCost = 50
     
     def heal(self):

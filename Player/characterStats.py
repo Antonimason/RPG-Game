@@ -11,7 +11,7 @@ def characterStats(character):
         f"|-------------------- Attributes ---------------------|\n"
         f"| Max Health: {character.getMaxHealth()}         \n"
         f"| Current Health: {character.getCurrentHealth()} \n"
-        f"| Max Mana: {character.getCurrentHealth()}       \n"
+        f"| Max Mana: {character.getMaxMana()}       \n"
         f"| Current Mana: {character.getCurrentMana()}     \n"
         f"| Attack: {character.getAttack()}                \n"
         f"| Special Attack: {character.getSpecialAttack()} \n"
