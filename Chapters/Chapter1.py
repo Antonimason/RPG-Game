@@ -74,7 +74,8 @@ def menuCaller(character, nextEpisode):
             while True:
                 killSelection = get_valid_input(killmonster, ["1", "2", "3", "4"])
                 if killSelection == "1":
-                    handle_battle(character, Rat())
+                    if handle_battle(character, Rat()):
+                        break
                 elif killSelection == "2":
                     if handle_battle(character, Dog()):
                         break
@@ -167,6 +168,7 @@ def TheLostBoy(character):
         "You have received:\n"
         "Exp: 50\n"
         "Gold: 25 coins"
+        "x1 Health Potion"
     )
     
     theLostBoyInput = get_valid_input(theLostBoy, ["yes", "no"])
@@ -179,6 +181,7 @@ def TheLostBoy(character):
             character.exp += 50
             character.gold += 25
             menuCaller(character, TheElvenEnclave)
+            character.add_item("Health Potion")
     elif theLostBoyInput == "no":
         historyLine("\nYou decide not to get involved, leaving the young woman to search for her brother on her own. The young woman is disappointed as you turn away.\n")
         menuCaller(character, TheElvenEnclave)
@@ -244,8 +247,7 @@ def TheElvenEnclave(character):
         if handle_battle(character, Elf()):
             historyLine(victoryInBattle)
             character.exp += 100
-            #add 
-            character.inventory.push("Elven Bow")
+            character.add_item("Elven Bow")
             endGame(character)
     elif theElvenEnclaveInput == "no":
         historyLine(defeatInBattle)

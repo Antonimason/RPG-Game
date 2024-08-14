@@ -10,7 +10,7 @@ def characterCreation():
     Depending on the user's choices, a character is created, and the game progresses to chapter 1.
     """
     # Dialogue prompts for user interaction
-    emailAddressRequest = "\nPlease introduce an email address in order to send the history of your journey to your mailbox. Remember that your email address must be valid || type 'exit' to exit the game \n"
+    emailAddressRequest = "\nPlease introduce an email address in order to send the history of your journey to your mailbox, this email address will be also related to your character\n. Remember that your email address must be valid || type 'exit' to exit the game \n"
     welcome = "\nWelcome to character creation game! \n There will be some questions for you in order to create your character, are you ready? || Type: 'yes' or 'no' \n"
     nameRequest = "\nPlease introduce your character name: || Type 'exit' to exit the game \n"
     genderRequest = "\nPlease introduce the character gender: || Type 'male' or 'female' || type 'exit' to exit the game \n"
@@ -50,21 +50,25 @@ def characterCreation():
         characterProfession = input(professionRequest).lower().strip()  # Prompt for character profession
         # Character creation based on chosen profession
         if characterProfession == "1":
+            # Paladin(userEmailAddress, characterName, characterGender, profession, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
             character = Paladin(userEmailAddress, characterName, characterGender, "Paladin", 1, 0, 100, 300, 300, 100, 100, 30, 45, 40, 10, 0)
             printingCharacterCreation(welcome, startProgram, nameRequest, characterName, genderRequest, characterGender, professionRequest, characterProfession)
             chapter_1(character)  # Start chapter 1 with the created character
             trigger = True
         elif characterProfession == "2":
+            # Knight(userEmailAddress, characterName, characterGender, profession, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
             character = Knight(userEmailAddress, characterName, characterGender, "Knight", 1, 0, 100, 450, 450, 100, 100, 30, 45, 40, 10, 0)
             printingCharacterCreation(welcome, startProgram, nameRequest, characterName, genderRequest, characterGender, professionRequest, characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "3":
+            # Sorcerer(userEmailAddress, characterName, characterGender, profession, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
             character = Sorcerer(userEmailAddress, characterName, characterGender, "Sorcerer", 1, 0, 100, 200, 200, 100, 100, 30, 45, 40, 10, 0)
             printingCharacterCreation(welcome, startProgram, nameRequest, characterName, genderRequest, characterGender, professionRequest, characterProfession)
             chapter_1(character)
             trigger = True
         elif characterProfession == "4":
+            # Druid(userEmailAddress, characterName, characterGender, profession, level, exp, maxHealth, currentHealth, maxMana, currentMana, attack, specialAttack, defense, healing, gold)
             character = Druid(userEmailAddress, characterName, characterGender, "Druid", 1, 0, 100, 200, 200, 100, 100, 30, 45, 40, 10, 0)
             printingCharacterCreation(welcome, startProgram, nameRequest, characterName, genderRequest, characterGender, professionRequest, characterProfession)
             chapter_1(character)

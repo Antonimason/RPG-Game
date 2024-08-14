@@ -70,10 +70,19 @@ class Player:
     def getGold(self):
         return self.gold
     
+    def add_item(self, item):
+        """Add a object to inventory."""
+        self.inventory.append(item)
+        print(f"{item} has been added to Inventory")
+
     def getInventory(self):
-        return self.inventory
-            
-    
+        """Show inventory"""
+        if self.inventory:
+            for index, item in enumerate(self.inventory, start=1):
+                return f"{index}. {item}\n"
+        else:
+            return ("Your inventory is empty.\n")
+             
     def getIsAlive(self):
         if(self.isAlive == True):
             return True
@@ -86,8 +95,8 @@ class Player:
     def getSpecialAttackDamage(self):
         if self.currentMana >= self.specialAttackManaCost:
             self.currentMana -= self.specialAttackManaCost
-            damage = random.randint(0, self.specialAttack)
-            print(f"currentMana after special attack: {self.currentMana}")
+            damage = random.randint(self.specialAttack - 15, self.specialAttack)
+            print(f"current Mana after special attack: {self.currentMana}")
             return damage
         else:
             return None

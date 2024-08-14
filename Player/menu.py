@@ -11,7 +11,7 @@ def menu(character):
         character: The character object containing the player's information and stats.
     """
     # Text to display the available menu options
-    menu_text = "\nType 1 to view character stats\nType 2 to end game\nType 3 to go back"
+    menu_text = "\nType 1 to view character stats\nType 2 to open Inventory\nType 3 to end game\nType 4 to go back"
     
     # Trigger to keep the menu active until a valid option is selected
     trigger = False
@@ -23,12 +23,15 @@ def menu(character):
         
         if user_input == "1":  # If the player chooses to view character stats
             characterStats(character)  # Display character stats
-        elif user_input == "2":  # If the player chooses to end the game
+        elif user_input == "2":  # If the player chooses to check inventory
+            inventory = character.getInventory()
+            historyLine("Inventory:\n" + inventory)
+        elif user_input == "3":  # If the player chooses to end the game
             endGame(character)  # Call the function to end the game
             trigger = True  # Exit the loop to end the menu
-        elif user_input == "3":  # If the player chooses to go back
+        elif user_input == "4":  # If the player chooses to go back
             trigger = True  # Exit the loop to go back to the previous menu
             return  # Return to the previous function
         else:
             # If the player enters an invalid option, display an error message
-            historyLine("Sorry, please enter a valid option.")
+            historyLine("\nSorry, please enter a valid option.\n")

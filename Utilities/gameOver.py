@@ -21,7 +21,7 @@ def endGame(character):
     characterStats(character)
     
     # Send an email with the game story file to the player's email address
-    gmail_send_message("Hola", "Chart story", character.getEmail(), getFile())
+    gmail_send_message(f"Please see attached {character.getName()}'s story", "Venequia", character.getEmail(), getFile())
     
     # Check and organize game files after the game ends
     fileChecker()

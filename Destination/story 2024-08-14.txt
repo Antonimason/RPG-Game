@@ -1,0 +1,431 @@
+
+Welcome to character creation game! 
+ There will be some questions for you in order to create your character, are you ready? || Type: 'yes' or 'no' 
+
+yes
+
+Please introduce your character name: || Type 'exit' to exit the game 
+
+Venequia
+
+Please introduce the character gender: || Type 'male' or 'female' || type 'exit' to exit the game 
+
+male
+
+Please select one of the following professions for your character: 
+Type 1 to select Paladin 
+Type 2 to select Knight, 
+Type 3 to select Sorcerer, 
+Type 4 to select Druid || type 'exit' to exit the game
+
+2
+
+Your character Venequia has been created successfully
+
+--------------------------------------------------
+
+-------------------- EPISODE I ---------------------
+
+--------------------------------------------------
+
+1
+1
+The sun has barely risen over the small village of Lunera, where you reside. The morning mist still clings to the ground, and the chirping of birds fills the air. Today, however, is not an ordinary day. As you step out of your humble home, you notice something unusual—no villagers are in sight.
+
+Before you can react, a wild dog leaps out from the shadows, its eyes glowing with an unnatural light. The dog circles you, teeth bared, ready to attack.
+
+The battle has started!
+
+1
+
+You attacked the Dog for 19 damage!
+
+
+The Dog attacked you for 6 damage!
+
+1
+
+You attacked the Dog for 19 damage!
+
+
+The Dog attacked you for 2 damage!
+
+1
+
+You attacked the Dog for 3 damage!
+
+
+The Dog attacked you for 5 damage!
+
+1
+
+You attacked the Dog for 6 damage!
+
+
+The Dog attacked you for 6 damage!
+
+1
+
+You attacked the Dog for 6 damage!
+
+
+The Dog attacked you for 4 damage!
+
+1
+
+You attacked the Dog for 0 damage!
+
+
+The Dog attacked you for 6 damage!
+
+1
+
+You attacked the Dog for 23 damage!
+
+
+The Dog has been defeated!
+
+
+Your reward:
+ Experience: 20.
+ Gold: 2 coins.
+
+3
+3
+
+The battle has started!
+
+1
+
+You attacked the Rat for 17 damage!
+
+
+The Rat attacked you for 4 damage!
+
+1
+
+You attacked the Rat for 25 damage!
+
+
+The Rat attacked you for 4 damage!
+
+1
+
+You attacked the Rat for 8 damage!
+
+
+The Rat has been defeated!
+
+
+Your reward:
+ Experience: 10.
+ Gold: 0 coins.
+
+
+The battle has started!
+
+1
+
+You attacked the Dog for 10 damage!
+
+
+The Dog attacked you for 0 damage!
+
+1
+
+You attacked the Dog for 7 damage!
+
+
+The Dog attacked you for 6 damage!
+
+1
+
+You attacked the Dog for 11 damage!
+
+
+The Dog attacked you for 6 damage!
+
+1
+
+You attacked the Dog for 11 damage!
+
+
+The Dog attacked you for 8 damage!
+
+2
+
+You used a special attack on the Dog for 19 damage!
+
+
+The Dog attacked you for 1 damage!
+
+1
+
+You attacked the Dog for 11 damage!
+
+
+The Dog attacked you for 10 damage!
+
+1
+
+You attacked the Dog for 15 damage!
+
+
+The Dog has been defeated!
+
+
+Your reward:
+ Experience: 20.
+ Gold: 13 coins.
+
+3
+3
+
+The battle has started!
+
+1
+
+You attacked the Soldier for 7 damage!
+
+
+The Soldier attacked you for 4 damage!
+
+2
+
+You used a special attack on the Soldier for 25 damage!
+
+
+The Soldier attacked you for 21 damage!
+
+2
+
+You used a special attack on the Soldier for 20 damage!
+
+
+The Soldier attacked you for 24 damage!
+
+2
+
+You used a special attack on the Soldier for 4 damage!
+
+
+The Soldier attacked you for 17 damage!
+
+2
+Sorry, your current mana is: 10 and it is too low
+
+The Soldier attacked you for 25 damage!
+
+1
+
+You attacked the Soldier for 30 damage!
+
+
+The Soldier attacked you for 18 damage!
+
+1
+
+You attacked the Soldier for 10 damage!
+
+
+The Soldier attacked you for 0 damage!
+
+1
+
+You attacked the Soldier for 2 damage!
+
+
+The Soldier attacked you for 6 damage!
+
+1
+
+You attacked the Soldier for 26 damage!
+
+
+The Soldier attacked you for 10 damage!
+
+1
+
+You attacked the Soldier for 8 damage!
+
+
+The Soldier attacked you for 8 damage!
+
+1
+
+You attacked the Soldier for 19 damage!
+
+
+The Soldier attacked you for 25 damage!
+
+1
+
+You attacked the Soldier for 23 damage!
+
+
+The Soldier has been defeated!
+
+
+Your reward:
+ Experience: 70.
+ Gold: 59 coins.
+
+1
+1
+yes
+yes
+Moved by the woman’s plight, you agree to help her find her brother. She leads you to the entrance of the keep, where the guards are stationed.They eye you suspiciously but are too intimidated by your presence to interfere.
+
+The woman, who introduces herself as Liana, explains that the soldiers have been taking children from the nearby villages as offerings to their cruel lord.She fears that her brother is destined for a dark and terrible fate if you do not act quickly.
+
+You enter the keep, its halls dark and foreboding. The air is thick with the stench of decay, and you can hear the distant cries of those who have suffered within these walls.Liana stays close behind you, her fear palpable as you descend deeper into the bowels of Harrenhal.Suddenly, the soldier appeared in front of you ready for a battle.
+
+The battle has started!
+
+1
+
+You attacked the Soldier for 33 damage!
+
+
+The Soldier attacked you for 21 damage!
+
+2
+
+You used a special attack on the Soldier for 32 damage!
+
+
+The Soldier attacked you for 12 damage!
+
+2
+
+You used a special attack on the Soldier for 13 damage!
+
+
+The Soldier attacked you for 14 damage!
+
+2
+
+You used a special attack on the Soldier for 22 damage!
+
+
+The Soldier attacked you for 12 damage!
+
+2
+Sorry, your current mana is: 15 and it is too low
+
+The Soldier attacked you for 1 damage!
+
+1
+
+You attacked the Soldier for 30 damage!
+
+
+The Soldier attacked you for 25 damage!
+
+1
+
+You attacked the Soldier for 2 damage!
+
+
+The Soldier attacked you for 0 damage!
+
+1
+
+You attacked the Soldier for 52 damage!
+
+
+The Soldier has been defeated!
+
+
+Your reward:
+ Experience: 70.
+ Gold: 32 coins.
+
+With a final, powerful strike, you defeat the soldier, sending him crumpling to the ground.Liana rushes to her brother’s side, tears streaming down her face as she unties his bonds and holds him close.
+
+“Thank you... thank you so much,” she sobs, overwhelmed with relief and gratitude.
+
+You have received:
+Exp: 50
+Gold: 25 coinsx1 Health Potion
+1
+1
+You journey deep into the ancient forest of Aeloria, where the trees tower above, their leaves shimmering with a faint, ethereal glow. The air is thick with the scent of pine and moss, and the distant sound of flowing water guides you forward.
+
+After hours of travel, you arrive at the hidden Elven Enclave, a place of breathtaking beauty and serenity. Elven structures, crafted from living wood and adorned with silver and crystal, blend seamlessly with the natural surroundings. The elves here, tall and graceful, move with an elegance that seems almost otherworldly.
+yes
+yes
+Moved by Luthien’s plea, you agree to help defend the grove. He leads you to the heart of the enclave, where ancient trees form a natural barrier against the encroaching darkness. Elven archers are perched in the treetops, their arrows glowing with magical energy.
+
+As you take your position, the ground trembles, and from the shadows, twisted creatures emerge—once noble forest spirits, now corrupted by dark magic. Their eyes burn with malevolence as they charge towards the grove, intent on destroying everything in their path.
+
+You ready your weapon, preparing to face the oncoming horde.
+
+The battle has started!
+
+1
+
+You attacked the Elf for 3 damage!
+
+
+The Elf attacked you for 12 damage!
+
+1
+
+You attacked the Elf for 37 damage!
+
+
+The Elf attacked you for 6 damage!
+
+1
+
+You attacked the Elf for 45 damage!
+
+
+The Elf attacked you for 8 damage!
+
+1
+
+You attacked the Elf for 51 damage!
+
+
+The Elf has been defeated!
+
+
+Your reward:
+ Experience: 40.
+ Gold: 2 coins.
+
+With swift strikes and unwavering resolve, you and the elves repel the dark creatures, cutting them down before they can breach the grove. The corrupted spirits let out haunting wails as they fall, their forms dissipating into wisps of dark mist.
+
+As the last of the creatures is defeated, the grove falls silent once more. Luthien approaches you, his expression one of deep gratitude.
+
+'You have saved us, traveler. The sacred grove is safe, thanks to your courage and skill. Please, accept this as a token of our gratitude.'
+
+You have received:
+Exp: 100
+Elven Bow: A finely crafted bow imbued with the magic of the forest.
+
+
+The game has ended. Thank you for playing Venequia
+
+Your character finished with the following stats:
+
+
+|-------------------- Character Stats ---------------------|
+| Name: Venequia               
+| Gender: male               
+| Profession: Knight        
+| Level: 3                  
+| Exp: 130.0                      
+| Gold: 133                    
+|-------------------- Attributes ---------------------|
+| Max Health: 530         
+| Current Health: 530 
+| Max Mana: 110       
+| Current Mana: 110     
+| Attack: 80                
+| Special Attack: 115 
+| Defense: 80              
+| Healing: 20              
+|------------------------------------------------|
