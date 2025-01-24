@@ -11,8 +11,8 @@ def characterCreation():
     """
     # Dialogue prompts for user interaction
     emailAddressRequest = "\nPlease introduce an email address in order to send the history of your journey to your mailbox, this email address will be also related to your character\n. Remember that your email address must be valid || type 'exit' to exit the game \n"
-    welcome = "\nWelcome to character creation game! \n There will be some questions for you in order to create your character, are you ready? || Type: 'yes' or 'no' \n"
-    nameRequest = "\nPlease introduce your character name: || Type 'exit' to exit the game \n"
+    welcome = "\nWelcome to Venequia! \n\n There will be some questions for you in order to create your character, are you ready?\nType: 'yes' or 'no' \n"
+    nameRequest = "\nPlease introduce your character name. || Type 'exit' to exit the game \n"
     genderRequest = "\nPlease introduce the character gender: || Type 'male' or 'female' || type 'exit' to exit the game \n"
     professionRequest = "\nPlease select one of the following professions for your character: \nType 1 to select Paladin \nType 2 to select Knight, \nType 3 to select Sorcerer, \nType 4 to select Druid || type 'exit' to exit the game\n"
     

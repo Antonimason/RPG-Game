@@ -1,12 +1,8 @@
 import os;
-from dotenv import load_dotenv
 from Chapters.characterCreation import characterCreation
 
 
 def main():
-    
-    #Starting character creation process
-    characterCreation()
 
     #Directories name
     folders = ["Misc", "Input", "Destination"]
@@ -19,6 +15,8 @@ def main():
         else:
             print(f"Directory '{folder}' already exists.")
 
+    #Starting character creation process
+    characterCreation()
     
 if __name__ == "__main__":
     main()

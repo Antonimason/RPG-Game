@@ -14,7 +14,8 @@ def log_and_record(message, is_input=False):
     """
     if is_input:
         historyLine(message)
-    recordDocument(message)
+    else:
+        recordDocument(message)
 
 def get_valid_input(prompt, valid_options):
     """
